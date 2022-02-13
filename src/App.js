@@ -6,6 +6,7 @@ import { commerce } from "./Lib/com";
 import Cart from "./components/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
+import Modal from  './components/Modal'
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
@@ -41,6 +42,9 @@ function App() {
     const response = await commerce.cart.empty();
     setCart(response.cart);
   };
+
+  const [selectedImg,setSelectedImg] = useState(null)
+
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -54,7 +58,7 @@ function App() {
           <Route
             exact
             path="/"
-            element={<Products products={products} onAddToCart={handleCart} />}
+            element={<Products setSelectedImg={setSelectedImg} products={products} onAddToCart={handleCart} />}
           />
 
           <Route
@@ -71,6 +75,7 @@ function App() {
           />
           
         </Routes>
+        {selectedImg && <Modal setSelectedImg={setSelectedImg} selectedImg={selectedImg}/>}
         <Footer />
       </div>
     </Router>

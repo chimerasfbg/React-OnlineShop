@@ -2,7 +2,7 @@ import React from 'react'
 import Product from './Product';
 
 
-const Products = ({ products ,onAddToCart}) => {
+const Products = ({ products ,onAddToCart,setSelectedImg}) => {
 return(
     <div className='top' >
         <div className="banner">
@@ -19,7 +19,7 @@ return(
         <div  className='productFlex'>
             {products.map(product=>(
                 <div key={product.id} xs={12} sm={6} md={4} lg={3}>
-                    <Product product={product} onAddToCart= {onAddToCart}/>
+                    <Product setSelectedImg={setSelectedImg} product={product} onAddToCart= {onAddToCart}/>
                 </div>
             ))}
         </div>

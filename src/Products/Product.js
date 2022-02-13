@@ -2,13 +2,13 @@ import React from "react";
 import {MdAddCircleOutline} from "react-icons/md"
 import { AddShoppingCart } from "@material-ui/icons";
 
-const Product = ({ product, onAddToCart }) => {
+const Product = ({ product, onAddToCart ,setSelectedImg}) => {
   // return <div>test</div>
  
   return (
     
     <div className="card">
-      <img className="img" src={product.image.url} alt="image" />
+      <img className="img" onClick={()=> setSelectedImg(product.image.url)} src={product.image.url} alt="image" />
 
       <div className="cardContent">
         <div className="cardTitle">
