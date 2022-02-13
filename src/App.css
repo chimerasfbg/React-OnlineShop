@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-
+  font-family: 'Roboto Serif', sans-serif;
 }
 .top {
   margin-top: 100px;
@@ -11,6 +11,10 @@
 }
 .mainCart {
   margin-top: 100px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 300px;
 }
 .mainCart h1 {
   text-align: center;
@@ -21,25 +25,28 @@
 }
 .mainCart h2 {
   text-align: center;
+  
 }
 .cartFlex {
-  width: 85%;
   margin: auto;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   row-gap: 40px;
   column-gap: 40px;
   flex-wrap: wrap;
+  margin-bottom: 300px;
 }
 .card {
   max-width: 250px;
-height: 400px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
   box-shadow: 0 0 30px #ccc;
   border-radius: 10px;
+  margin-top: 15px;
 }
 .cardContent {
   display: flex;
@@ -47,18 +54,19 @@ height: 400px;
   width: 85%;
   margin: auto;
 }
-.cardContent h1 , h2, h3 {
-
+.cardContent h1,
+h2,
+h3 {
   margin: 0;
 }
 .cardTitle {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center ;
+  align-items: center;
 }
 
-#root > div > div > div > div> div > div.cardContent > h3 > p{
+#root > div > div > div > div > div > div.cardContent > h3 > p {
   text-align: center;
 }
 .description p {
@@ -76,6 +84,7 @@ height: 400px;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
+  
 }
 .cardAction p {
   font-size: 30px;
@@ -98,8 +107,16 @@ height: 400px;
   margin-top: 15px;
   margin-bottom: 10px;
   font-size: 25px;
+  border:none;
+  box-shadow: 0 0 10px;
 }
-.cartBtn{
+.blue{
+  background-color: #0077b6;
+}
+.red{
+  background-color: #d62828 ;
+}
+.cartBtn {
   border-radius: 15px;
   height: 40px;
   width: 60px;
@@ -113,7 +130,6 @@ height: 400px;
 }
 
 .totalPayment {
-  width: 85%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -129,4 +145,68 @@ height: 400px;
   margin-right: 10px;
   margin-bottom: 10px;
   font-size: 20px;
+}
+.relative{
+  position: relative;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100%;
+    padding-top: 40px;
+    color: #fff;
+
+}
+
+.footer-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+}
+.socials{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+  margin: 0 10px;
+}
+
+.socials a{
+  text-decoration: none;
+  color: #fff;
+  padding: 5px;
+  font-size: 2em;
+}
+
+
+
+@media screen and (max-width: 680px) {
+ .cartFlex{
+   justify-content: center;
+ }
 }

@@ -11,13 +11,14 @@ const Cart = ({
 
   const EmptyCart = () => (
     <h2>
-      You have no items in Your cart .<br/><Link to="/">Start Adding Some!!!</Link>
+      You have no items in Your cart .<br />
+      <Link to="/">Start Adding Some!!!</Link>
     </h2>
   );
 
   const FilledCart = () => (
     <>
-      <div className='cartFlex'>
+      <div className="cartFlex">
         {cart.line_items.map((item) => (
           <div key={item.id}>
             <CartItem
@@ -29,16 +30,21 @@ const Cart = ({
         ))}
       </div>
       <div className="totalPayment">
-        <h1>Subtotal : {cart.subtotal.formatted_with_symbol}</h1>
+        <div className="sub">
+          <h1>Subtotal : {cart.subtotal.formatted_with_symbol}</h1>
+        </div>
+
         <div>
-          <button className="btn medium" onClick={handleEmptyCart}>Empty Cart</button>
-          <button className="btn medium" >Check Out</button>
+          <button className="btn medium red " onClick={handleEmptyCart}>
+            Empty Cart
+          </button>
+          <button className="btn medium blue">Check Out</button>
         </div>
       </div>
     </>
   );
   return (
-    <div className='mainCart'>
+    <div className="mainCart">
       <h1>Your Shopping Cart</h1>
       {isEmpty ? <EmptyCart /> : <FilledCart />}
     </div>

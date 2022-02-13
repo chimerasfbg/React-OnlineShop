@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { commerce } from "./Lib/com";
 import Cart from "./components/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Footer from "./components/Footer";
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
@@ -27,9 +27,8 @@ function App() {
   };
 
   const handleUpdateCartQty = async (productId, quantity) => {
-    const response = await commerce.cart.update(productId, {quantity});
+    const response = await commerce.cart.update(productId, { quantity });
     setCart(response.cart);
-  
   };
 
   const handleRemoveFromCart = async (productId) => {
@@ -47,7 +46,6 @@ function App() {
     fetchCart();
   }, []);
 
-  
   return (
     <Router>
       <div className="App">
@@ -71,7 +69,9 @@ function App() {
               />
             }
           />
+          
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

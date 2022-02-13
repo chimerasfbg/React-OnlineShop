@@ -29,8 +29,8 @@ const NavBar = ({ totalItems }) => {
             className={classes.title}
           >
             {" "}
-            <img src="https://images.unsplash.com/photo-1584441405886-bc91be61e56a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=730&q=80" alt="logo" height="70px" className={classes.image} />
-            DotCom
+            <img src="https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png" alt="logo" height="60px" className={classes.image} />
+            
           </Typography>
           <div className={classes.grow} />
           {location.pathname === "/" && (
@@ -42,7 +42,7 @@ const NavBar = ({ totalItems }) => {
                 color="inherit"
               >
                 <Badge mr="50px" badgeContent={totalItems} color="secondary">
-                  <ShoppingCart />
+                  <ShoppingCart  style={{color:'white',fontSize:'30px'}}/>
                 </Badge>
               </IconButton>
             </div>

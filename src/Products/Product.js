@@ -1,5 +1,5 @@
 import React from "react";
-
+import {MdAddCircleOutline} from "react-icons/md"
 import { AddShoppingCart } from "@material-ui/icons";
 
 const Product = ({ product, onAddToCart }) => {
@@ -17,9 +17,7 @@ const Product = ({ product, onAddToCart }) => {
       </div>
 
       <div className="cardAction">
-        <button className='cartBtn' onClick={() => onAddToCart(product.id, 1)}>
-          <AddShoppingCart  />
-        </button>
+          <MdAddCircleOutline className='cartBtn' onClick={() => onAddToCart(product.id, 1)}  />
       </div>
     </div>
   );
