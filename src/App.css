@@ -27,9 +27,20 @@
 }
 .mainCart h2 {
   text-align: center;
+  margin-top: 120px;
   
 }
 .cartFlex {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+.productFlex {
   margin: auto;
   display: flex;
   flex-direction: row;

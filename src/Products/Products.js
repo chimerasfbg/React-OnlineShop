@@ -16,7 +16,7 @@ return(
             <button className="btn small">Gadgets</button>
 
         </div>
-        <div  className='cartFlex'>
+        <div  className='productFlex'>
             {products.map(product=>(
                 <div key={product.id} xs={12} sm={6} md={4} lg={3}>
                     <Product product={product} onAddToCart= {onAddToCart}/>
