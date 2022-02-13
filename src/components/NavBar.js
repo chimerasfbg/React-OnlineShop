@@ -8,32 +8,45 @@ import {
   MenuItem,
   Typography,
 } from "@material-ui/core";
-import { Link , useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useStyles from "../components/NavStyles";
 
 const NavBar = ({ totalItems }) => {
   const classes = useStyles();
   const location = useLocation();
 
-  
+
+ 
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
-          <Typography variant="h6" component={Link} to="/" color="inherit" className={classes.title}>
+          <Typography
+            variant="h4"
+            component={Link}
+            to="/"
+            color="inherit"
+            className={classes.title}
+          >
             {" "}
-            <img src="" alt="." height="25px" className={classes.image} />
+            <img src="https://images.unsplash.com/photo-1584441405886-bc91be61e56a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=730&q=80" alt="logo" height="70px" className={classes.image} />
             DotCom
           </Typography>
           <div className={classes.grow} />
-          {location.pathname === '/' && (
-          <div className={classes.button}>
-            <IconButton component={Link} to="/cart" aria-label="show cart" color="inherit">
-              <Badge badgeContent={totalItems} color="secondary">
-                <ShoppingCart />
-              </Badge>
-            </IconButton>
-          </div>)}
+          {location.pathname === "/" && (
+            <div className={classes.button}>
+              <IconButton
+                component={Link}
+                to="/cart"
+                aria-label="show cart"
+                color="inherit"
+              >
+                <Badge mr="50px" badgeContent={totalItems} color="secondary">
+                  <ShoppingCart />
+                </Badge>
+              </IconButton>
+            </div>
+          )}
         </Toolbar>
       </AppBar>
     </>

@@ -2,10 +2,7 @@ import React from "react";
 
 import { AddShoppingCart } from "@material-ui/icons";
 
-const Product = ({ product,onAddToCart }) => {
-
-
-
+const Product = ({ product, onAddToCart }) => {
   // return <div>test</div>
   return (
     <div className="card">
@@ -13,17 +10,14 @@ const Product = ({ product,onAddToCart }) => {
 
       <div className="cardContent">
         <div className="cardTitle">
-          <p>{product.name}</p>
-          <p >{product.price.formatted}</p>
+          <h1>{product.name}</h1>
+          <h2>{product.price.formatted}</h2>
         </div>
-
-        <div className="description">
-          <p dangerouslySetInnerHTML={{ __html: product.description}}></p>
-        </div>
+        <h3 dangerouslySetInnerHTML={{ __html: product.description }}></h3>
       </div>
 
       <div className="cardAction">
-        <button onClick={()=>onAddToCart(product.id,1)}>
+        <button className='cartBtn' onClick={() => onAddToCart(product.id, 1)}>
           <AddShoppingCart  />
         </button>
       </div>
