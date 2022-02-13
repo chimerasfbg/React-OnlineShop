@@ -4,7 +4,9 @@ import { AddShoppingCart } from "@material-ui/icons";
 
 const Product = ({ product, onAddToCart }) => {
   // return <div>test</div>
+ 
   return (
+    
     <div className="card">
       <img className="img" src={product.image.url} alt="image" />
 
